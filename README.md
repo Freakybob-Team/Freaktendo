@@ -1,2 +1,8 @@
 # Freaktendo
-Our servers will be up at 6:32:1 PM CST until 6:32:2 PM CST every day.
+Sick of Pretendo? We got you.
+# Game Support
+| Game          | Support       |
+| ------------- | ------------- |
+| Animal Crossing: New Leaf  | Yes  |
+| Splatoon | Yes |
+| My Nutsack Simulator | Yes |
