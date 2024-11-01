@@ -9,10 +9,10 @@
             font-family: "Roboto", sans-serif;
         }
         h1, h2, p, header, h3 {
-            color: white
+            color: white;
         }
         body {
-            background-color: #1b1f3b
+            background-color: #1b1f3b;
         }
         #countdown {
             margin-top: 20px;
@@ -24,10 +24,10 @@
             z-index: 199;
         }
     </style>
-    		<meta property="og:title" content="Freaktendo Network">
-		<meta property="og:description" content="An open source Nintendo Network replacement that aims to build custom servers for the Wii U and 3DS family of consoles">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://Freakybob-Team.github.io/Freaktendo">
+    <meta property="og:title" content="Freaktendo Network">
+    <meta property="og:description" content="An open source Nintendo Network replacement that aims to build custom servers for the Wii U and 3DS family of consoles">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Freakybob-Team.github.io/Freaktendo">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -37,38 +37,26 @@
     <h2>The Future of Gaming.</h2>
     <h3>Freaktendo is here to provide a space for that hole in your heart.</h3>
     <p>Our servers go up at 6:32:01 PM and go down at 6:32:02 PM. So you can enjoy the best of it, while still getting outside.</p>
-    <p>During the downage, we fix Splatoon servers instead of doing anything meaningful.</p>
-    <div id="countdown"></div>
+    <p>During the downtime, we fix Splatoon servers instead of doing anything meaningful.</p>
+    <div id="countdown">Servers are not up</div>
     <script>
         const countdownElement = document.getElementById('countdown');
-        const popup = document.getElementById('popup');
 
-        
-        const targetDate = new Date('October 27, 2024 6:32:01 PM').getTime();
+        function checkServerStatus() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
 
-       
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = targetDate - now;
-
-            
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            
-            if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
+           
+            if (hours === 18 && minutes === 32 && seconds === 1) {
                 countdownElement.innerHTML = "Servers are up!";
-                popup.style.display = 'block';
+            } else {
+                countdownElement.innerHTML = "Servers are not up LMAO IMAGINE";
             }
         }
 
-       
-        const countdownInterval = setInterval(updateCountdown, 1000);
+        setInterval(checkServerStatus, 1000);
     </script>
 </body>
 </html>
